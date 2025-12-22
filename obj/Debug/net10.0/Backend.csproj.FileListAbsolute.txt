@@ -1,0 +1,8 @@
+C:\Git\crud2\Backend\obj\Debug\net10.0\Backend.csproj.AssemblyReference.cache
+C:\Git\crud2\Backend\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Git\crud2\Backend\obj\Debug\net10.0\Backend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\crud2\Backend\obj\Debug\net10.0\Backend.AssemblyInfoInputs.cache
+C:\Git\crud2\Backend\obj\Debug\net10.0\Backend.AssemblyInfo.cs
+C:\Git\crud2\Backend\obj\Debug\net10.0\Backend.csproj.CoreCompileInputs.cache
+C:\Git\crud2\Backend\obj\Debug\net10.0\Backend.MvcApplicationPartsAssemblyInfo.cs
+C:\Git\crud2\Backend\obj\Debug\net10.0\Backend.MvcApplicationPartsAssemblyInfo.cache
