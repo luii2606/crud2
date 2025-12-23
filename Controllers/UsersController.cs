@@ -1,42 +1,45 @@
+using Backend.DTO;
+using Backend.Services;
 using Microsoft.AspNetCore.Mvc;
-using Backend.Models;
-namespace Backend.Controllers;
 
-[ApiController]
-[Route("api/users")]
-public class UsersController : ControllerBase
+namespace Backend.Controllers
 {
-    private readonly IUserService _service;
-
-    public UsersController(IUserService service)
+    [ApiController]
+    [Route("api/users")]
+    public class UsersController : ControllerBase
     {
-        _service = service;
-    }
+        private readonly IUserService _service;
 
-    [HttpGet]
-    public IActionResult Get() => Ok(_service.GetAll());
+        public UsersController(IUserService service)
+        {
+            _service = service;
+        }
 
-    [HttpGet("{id}")]
-    public IActionResult Get(int id) => Ok(_service.GetById(id));
+        [HttpGet]
+        public IActionResult Get() => Ok(_service.GetAll());
 
-    [HttpPost]
-    public IActionResult Post(CreateUserDto dto)
-    {
-        _service.Create(dto);
-        return Ok();
-    }
+        [HttpGet("{id}")]
+        public IActionResult Get(int id) => Ok(_service.GetById(id));
 
-    [HttpPut("{id}")]
-    public IActionResult Put(int id, UpdateUserDto dto)
-    {
-        _service.Update(id, dto);
-        return Ok();
-    }
+        [HttpPost]
+        public IActionResult Post([FromBody] CreateUserDto dto)
+        {
+            _service.Create(dto);
+            return Ok(new { message = "Usuario creado con roles" });
+        }
 
-    [HttpDelete("{id}")]
-    public IActionResult Delete(int id)
-    {
-        _service.Delete(id);
-        return Ok();
+        // [HttpPut("{id}")]
+        // public IActionResult Put(int id, UpdateUserDto dto)
+        // {
+        //     _service.Update(id, dto);
+        //     return Ok();
+        // }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            _service.Delete(id);
+            return Ok();
+        }
     }
 }
